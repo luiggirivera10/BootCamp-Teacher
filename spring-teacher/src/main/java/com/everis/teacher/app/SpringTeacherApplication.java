@@ -1,10 +1,10 @@
 package com.everis.teacher.app;
 
+import com.everis.teacher.app.config.SwaggerConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
-import com.everis.teacher.app.config.SwaggerConfiguration;
 
 /**
  * .
