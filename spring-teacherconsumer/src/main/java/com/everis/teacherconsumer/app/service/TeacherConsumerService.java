@@ -29,8 +29,11 @@ public class TeacherConsumerService {
     System.out.println("Fetching Teacher Information");
     
     String response = restTemplate
-        .exchange("http://localhost:8081/spring-teacher/api/v1.0/teachers", HttpMethod.GET
-        ,null,new ParameterizedTypeReference<String> () {},"").getBody();
+        .exchange("http://localhost:8081/spring-teacher/api/v1.0/teachers"
+        , HttpMethod.GET
+        ,null
+        ,new ParameterizedTypeReference<String> () {}
+        ,"").getBody();
     
     System.out.println("Response Received from Teacher Application");
     return "NORMAL CALL Successful" + "Teacher Details: " + response;
