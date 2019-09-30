@@ -50,4 +50,9 @@ public interface TeacherService {
  * Solo para TEST.
  */
   Mono<Teacher> obtenerPorName(String name);
+
+  /**
+   * .
+   */
+  Flux<Teacher> findByNameCourse(String nameCourse);
 }
