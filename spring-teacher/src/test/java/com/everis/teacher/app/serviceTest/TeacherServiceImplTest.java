@@ -51,7 +51,7 @@ public class TeacherServiceImplTest {
     teacher.setBirthdate(new Date());
     teacher.setTypeID("DNI");
     teacher.setNumberID("55556666");
-    teacher.setIdCourse("12312312");
+    teacher.setNameCourse("12312312");
     when(teacherService.findAll()).thenReturn(Flux.just(teacher));
     final Flux<Teacher> actua = teacherService.findAll();
     assertResults(actua, teacher);
@@ -69,7 +69,7 @@ public class TeacherServiceImplTest {
     teacher.setBirthdate(new Date());
     teacher.setTypeID("DNI");
     teacher.setNumberID("10210210");
-    teacher.setIdCourse("12312312");
+    teacher.setNameCourse("12312312");
     when(teacherRepository.findById(teacher.getId())).thenReturn(Mono.just(teacher));
     final Mono<Teacher> actual = teacherRepository.findById(teacher.getId());
     assertResults(actual, teacher);
@@ -104,7 +104,7 @@ public class TeacherServiceImplTest {
     teacher.setBirthdate(new Date());
     teacher.setTypeID("DNI");
     teacher.setNumberID("44443333");
-    teacher.setIdCourse("12312312");
+    teacher.setNameCourse("12312312");
     teacher.setCreatedAt(new Date());
     teacher.setModifiedAt(new Date());
     when(teacherRepository.save(teacher)).thenReturn(Mono.just(teacher));
@@ -124,7 +124,7 @@ public class TeacherServiceImplTest {
     teacher.setBirthdate(new Date());
     teacher.setTypeID("DNI");
     teacher.setNumberID("44443333");
-    teacher.setIdCourse("12312312");
+    teacher.setNameCourse("12312312");
     teacher.setCreatedAt(new Date());
     teacher.setModifiedAt(new Date());
     when(teacherRepository.delete(teacher)).thenReturn(Mono.empty());
@@ -142,7 +142,7 @@ public class TeacherServiceImplTest {
     teacher.setBirthdate(new Date());
     teacher.setTypeID("dni");
     teacher.setNumberID("736723727");
-    teacher.setIdCourse("12312312");
+    teacher.setNameCourse("12312312");
     final String numberID = "736723727";
     when(teacherRepository.findByNumberID(numberID)).thenReturn(Mono.just(teacher));
     final Mono<Teacher> actual = teacherService.findByNumberID(numberID);
@@ -161,7 +161,7 @@ public class TeacherServiceImplTest {
     teacher.setBirthdate(new Date());
     teacher.setTypeID("dni");
     teacher.setNumberID("736723727");
-    teacher.setIdCourse("12312312");
+    teacher.setNameCourse("12312312");
     final String name = "dekweowe";
     when(teacherRepository.findByName(name)).thenReturn(Flux.just(teacher));
     final Flux<Teacher> actual = teacherService.findByName(name);

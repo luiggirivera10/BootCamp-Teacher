@@ -34,4 +34,9 @@ public interface TeacherRepository extends ReactiveMongoRepository<Teacher, Stri
  */
   @Query("{ 'name': ?0 }")
   Mono<Teacher> findName(String name);
+
+  /**
+   * Find by namecourse.
+   */
+  Flux<Teacher> findByNameCourse(String nameCourse);
 }

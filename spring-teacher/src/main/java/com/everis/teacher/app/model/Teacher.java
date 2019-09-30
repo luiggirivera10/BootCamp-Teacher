@@ -62,8 +62,8 @@ public class Teacher {
   /**
  * iidFamily.
  */
-  @NotEmpty(message = "'idCourse' No debe ser vacio!")
- private String idCourse;  
+  @NotEmpty(message = "'nameCourse' No debe ser vacio!")
+ private String nameCourse;  
   /**
    * .
    */

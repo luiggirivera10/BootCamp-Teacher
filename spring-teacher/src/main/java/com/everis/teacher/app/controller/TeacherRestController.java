@@ -67,6 +67,7 @@ public class TeacherRestController {
                         .next().doOnNext(teach -> LOG.info(teach.getName()));
     return teacher;
   }
+
   /**
 
    * Servicio para buscar por nombre devuelve una lista.
@@ -76,6 +77,17 @@ public class TeacherRestController {
   public Flux<Teacher> findByName(@PathVariable ("name") final String name) {
     return service.findByName(name)
         .doOnNext(teach -> LOG.info(teach.getName()));
+  }
+
+  /**
+
+   * Servicio para buscar por nombre devuelve una lista.
+
+   */
+  @GetMapping("/teachers/namecourse/{nameCourse}")
+  public Flux<Teacher> findByNameCourse(@PathVariable ("nameCourse") final String nameCourse) {
+    return service.findByNameCourse(nameCourse)
+        .doOnNext(teach -> LOG.info("Curso de Docente:  "+teach.getName()+" - "+teach.getNameCourse()));
   }
 
   /**
@@ -128,7 +140,7 @@ public class TeacherRestController {
                   existingTeacher.setBirthdate(teacher.getBirthdate());
                   existingTeacher.setTypeID(teacher.getTypeID());
                   existingTeacher.setNumberID(teacher.getNumberID());
-                  existingTeacher.setIdCourse(teacher.getIdCourse());
+                  existingTeacher.setNameCourse(teacher.getNameCourse());
                   existingTeacher.setModifiedAt(teacher.getModifiedAt());
                   return service.save(existingTeacher);
                 })

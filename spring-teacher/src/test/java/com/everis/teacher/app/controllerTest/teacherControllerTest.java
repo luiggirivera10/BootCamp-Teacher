@@ -53,9 +53,9 @@ public class teacherControllerTest {
     Flux<Teacher> initData = teacherRepository.deleteAll()
         .thenMany(Flux.just(
         Teacher.builder().id("1").name("Andres").gender("Masculino").birthdate(new Date())
-        .typeID("DNI").numberID("74306050").idCourse("101").build(),
+        .typeID("DNI").numberID("74306050").nameCourse("101").build(),
         Teacher.builder().id("2").name("Rodrigo").gender("Masculino").birthdate(new Date())
-        .typeID("DNI").numberID("74306051").idCourse("102").build())
+        .typeID("DNI").numberID("74306051").nameCourse("102").build())
         .flatMap(teacherRepository::save))
         .thenMany(teacherRepository.findAll());
 

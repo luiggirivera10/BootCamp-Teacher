@@ -86,4 +86,10 @@ public class TeacherServiceImpl implements TeacherService {
   public Mono<Teacher> obtenerPorName(final String name) {
     return teacherRepository.findName(name);
   }
+
+  @Override
+  public Flux<Teacher> findByNameCourse(String nameCourse) {
+    return teacherRepository.findByNameCourse(nameCourse);
+  }
+
 }
